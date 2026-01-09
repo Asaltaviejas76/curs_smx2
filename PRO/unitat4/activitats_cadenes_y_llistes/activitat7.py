@@ -1,11 +1,18 @@
 alum=[]
 eda=[]
 
-inal = input("Dime alumno: ")
-ineda = input("Dime edsd: ")
-
 while True:
+    inal = input("Dime alumno: ")
+    
     if inal == "-":
         break
-    else:
-        anu
+
+    ineda = int(input("Dime edad: "))
+
+    alum.append(inal) 
+    eda.append(ineda)
+
+print("Alumnos mayores de edad")
+for i in range(len(alum)):
+    if eda[i] >= 18:
+        print(alum[i])
