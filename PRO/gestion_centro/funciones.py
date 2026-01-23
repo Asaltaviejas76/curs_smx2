@@ -1,7 +1,6 @@
 import time
 from colorama import Fore
 
-
 def bienvenida(centro):
     print(Fore.YELLOW + "=",Fore.CYAN + "Control Formacion",centro,Fore.YELLOW + "=")
     time.sleep(1)
@@ -19,8 +18,7 @@ def bienvenida(centro):
     print(Fore.YELLOW + "+====================================+")
     time.sleep(1)
 
-
-def nom18():
+def nom():
     while True:
         nombre = input("Dime nombre y apellidos: ")
         nombre = " ".join(nombre.split())
@@ -30,65 +28,42 @@ def nom18():
         else:
             print(Fore.RED + "Error, introduce un nombre valido")
 
-
+def edad():
     while True:
         edad = input("Dime tu edad: ")
         if edad.isdigit() and 16 <= int(edad) <= 120:
-            print(Fore.GREEN + "Edad valida:",edad,"✅")
-            break
-        else:
-            print(Fore.RED + "Error, introduce un numero valido")
+            print(Fore.GREEN + f"Edad válida: {edad} ✅")
+            return int(edad)
+        print(Fore.RED + "Error, introduce una edad válida")
 
-
-def notas():
+def notaev(num):
     while True:
-        n1 = input("Dime nota evaluacon 1: ")
-        n1 = n1.replace(",",".")
-        if n1.isalpha():
-            print(Fore.RED + "Error, introduce un numero valido")
-
-        elif 0 <= float(n1) <= 10:
-            break
-        else:
-            print(Fore.RED + "Error, introduce un numero valido")
-    print(Fore.GREEN + "Nota valida:",n1,"✅")
-
-    while True:
-        n2 = input("Dime nota evaluacon 2: ")
-        n2 = n2.replace(",",".")
-        if n2.isalpha():
-            print(Fore.RED + "Error, introduce un numero valido")
-
-        elif 0 <= float(n2) <= 10:
-            break
-        else:
-            print(Fore.RED + "Error, introduce un numero valido")
-    print(Fore.GREEN + "Nota valida:",n2,"✅")
-
-    while True:
-        n3 = input("Dime nota evaluacon 3: ")
-        n3 = n3.replace(",",".")
-        if n1.isalpha():
-            print(Fore.RED + "Error, introduce un numero valido")
-
-        elif 0 <= float(n3) <= 10:
-            break
-        else:
-            print(Fore.RED + "Error, introduce un numero valido")
-    print(Fore.GREEN + "Nota valida:",n3,"✅")
-
+        nota = input(f"Dime nota evaluación {num}: ").replace(",", ".")
+        try:
+            nota = float(nota)
+            if 0 <= nota <= 10:
+                print(Fore.GREEN + f"Nota válida: {nota} ✅")
+                return nota
+        except:
+            pass
+        print(Fore.RED + "Error, introduce un número válido")
 
 def floline(texto):
-    print(Fore.CYAN + "+============",texto,"============+")
-
+    print(Fore.CYAN + "+============",texto,Fore.CYAN + "============+")
 
 def asis():
     while True:
         asis = input("Dime tu % de asistencia: ")
-        if asis.isdigit() and int(asis) <= 100:
-            print(Fore.GREEN + "Asistencia valida:",asis,"✅")
-            break
-        else:
-            print(Fore.RED + "Error, introduce un porcentaje de asistencia valido")
+        if asis.isdigit() and 0 <= int(asis) <= 100:
+            print(Fore.GREEN + f"Asistencia válida: {asis}% ✅")
+            return int(asis)
+        print(Fore.RED + "Error, introduce un porcentaje válido")
 
-
+def cargline():
+    print(Fore.YELLOW + "|====================================|")
+    print(Fore.YELLOW + "|===========" + Fore.GREEN + " Cargando... " + Fore.YELLOW + "============|")
+    time.sleep(2)
+    print(Fore.YELLOW + "|" + Fore.GREEN + "𝄃𝄂𝄂𝄂𝄂𝄀𝄁𝄃𝄃𝄀𝄁𝄃𝄂𝄂 100% 𝄃𝄂𝄃𝄂𝄂𝄀𝄁𝄃𝄂𝄂𝄀𝄁𝄃𝄂𝄂𝄃" + Fore.YELLOW + "|")
+    time.sleep(2)
+    print(Fore.YELLOW + "+====================================+")
+    time.sleep(2)
