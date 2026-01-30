@@ -24,11 +24,11 @@ def nom():
         nombre = " ".join(nombre.split())
         if nombre.replace(" ","").isalpha():
             print(Fore.GREEN + "Nombre y apellidos validos:",nombre,"✅")
-            break
+            return nombre
         else:
             print(Fore.RED + "Error, introduce un nombre valido")
 
-def edad():
+def ed():
     while True:
         edad = input("Dime tu edad: ")
         if edad.isdigit() and 16 <= int(edad) <= 120:
@@ -44,7 +44,7 @@ def notaev(num):
             if 0 <= nota <= 10:
                 print(Fore.GREEN + f"Nota válida: {nota} ✅")
                 return nota
-        except:
+        except ValueError:
             pass
         print(Fore.RED + "Error, introduce un número válido")
 
@@ -60,7 +60,7 @@ def asis():
         print(Fore.RED + "Error, introduce un porcentaje válido")
 
 def cargline():
-    print(Fore.YELLOW + "|====================================|")
+    print(Fore.YELLOW + "+====================================+")
     print(Fore.YELLOW + "|===========" + Fore.GREEN + " Cargando... " + Fore.YELLOW + "============|")
     time.sleep(2)
     print(Fore.YELLOW + "|" + Fore.GREEN + "𝄃𝄂𝄂𝄂𝄂𝄀𝄁𝄃𝄃𝄀𝄁𝄃𝄂𝄂 100% 𝄃𝄂𝄃𝄂𝄂𝄀𝄁𝄃𝄂𝄂𝄀𝄁𝄃𝄂𝄂𝄃" + Fore.YELLOW + "|")
